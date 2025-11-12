@@ -14,8 +14,10 @@
 /* default styles */
 body {
 	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
+    font-size: calc(90% + .2vw);
 	width: 80%;
+	max-width: 1024px;
+	line-height: 1.5;
 	margin: auto;
 	border: 2px solid var(--accent-color);
 }
@@ -24,7 +26,7 @@ a:hover, a:focus{
 	color: var(--accent-color);
 }
 h1, h2, h3, p, ul {
-	padding: .5em 0;
+	padding: .25em 0;
 }
 h1 {
 	font-size: 150%;
@@ -43,6 +45,7 @@ ul {
 /* the styles for the header */
 header {
 	border-bottom: 2px solid var(--accent-color);
+	line-height: 1.2;
 	background-image: linear-gradient(
 	    30deg, var(--gradient-color) 0%, white 30%, white 65%, var(--gradient-color) 100%);
 	& h2 {
@@ -57,16 +60,16 @@ header {
 	& img {
 		float: left;
 		margin: .75em 1em;
+		width: 90%;
+		min-width: 40px;
+		max-width: 80px;
 	}
 }
 
 /* the styles for the main content */
 main {
+	display: flex;
 	padding: 0 1em 1em;
-	& h1 {
-		border-top: 2px solid var(--accent-color);
-		border-bottom: 2px solid var(--accent-color);
-	}
 	& blockquote {
 		font-style: italic;
 		padding-left: 1em;
@@ -90,4 +93,34 @@ footer {
 /* CSS class */
 .large {
 	font-size: 125%;
+}
+
+aside {
+	flex-basis: 25%;
+	padding-right: 1em;
+	& img {
+		width: 95%;
+		min-width: 40px;
+		max-width: 75px;
+	}
+}
+
+section {
+	flex-basis: 75%;
+	padding-left: 1em;
+	& img {
+		float: right;
+	}
+}
+
+.featured {
+	border-top: 2px solid var(--accent-color);
+	border-bottom: 2px solid var(--accent-color);
+	padding: .5em;
+	& img {
+		width: 90%;
+		min-width: 100px;
+		max-width: 250px;
+		margin: 0 1em .5em 1em;
+	}
 }
